@@ -1,0 +1,94 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listado libros</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <button type="button" class="btn btn-primary float-right btn-nuevo">
+            Nuevo libro
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table id="libros" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Descripción</th>
+                    <th>pageCount</th>
+                    <th>excerpt</th>
+                    <th>publishDate</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalLibro" tabindex="-1" aria-labelledby="modalLibroLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLibroLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form-modal">
+                    <input type="hidden" id="id" name="id" value="" />
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Titulo</label>
+                            <input type="text" class="form-control" id="title" name="Title">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pageCount">Cant. Paginas</label>
+                            <input type="number" class="form-control" id="pageCount" name="PageCount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Descripción</label>
+                        <textarea type="text" class="form-control" id="description" name="Description" placeholder="Descripción del libro"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="excerpt">Extracto</label>
+                        <textarea type="text" class="form-control" id="excerpt" name="Excerpt" placeholder="Pequeño resumen del libro"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="publishDate">Publicado</label>
+                            <input type="text" class="form-control" id="PublishDate" name="PublishDate">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-acept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script src="~/js/book.js" asp-append-version="true"></script>
+}

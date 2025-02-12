@@ -1,0 +1,15 @@
+{
+  "BaseUrl": "https://fakerestapi.azurewebsites.net/api/v1",
+  "Endpoints": {
+    "Books": {
+      "GetAll": "/Books",
+      "GetById": "/Books/{id}",
+      "Create": "/Books",
+      "Update": "/Books/{id}",
+      "Delete": "/Books/{id}"
+    },
+    "Authors": {
+      "GetById": "/Authors/{id}"
+    }
+  }
+}
